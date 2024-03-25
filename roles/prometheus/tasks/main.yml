@@ -1,0 +1,20 @@
+---
+- name: Install Prometheus on CentOS
+  yum:
+    name: prometheus-node-exporter
+    state: present
+  when: ansible_distribution == "CentOS"
+
+- name: Install Prometheus on Ubuntu
+  apt:
+    name: prometheus
+    state: present
+  when: ansible_distribution == "Ubuntu"
+
+- name: Restart Prometheus
+  systemd:
+    name: prometheus
+    state: restarted
+  notify: Restart Prometheus
+
+

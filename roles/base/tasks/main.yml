@@ -1,0 +1,15 @@
+---
+- name: update repository index (CentOS)
+  dnf:
+    name: '*'
+    state: latest
+  when: ansible_distribution == "CentOS"
+  become: true
+
+- name: install updates (Ubuntu)
+  tags: always
+  apt:
+    update_cache: yes
+  changed_when: false
+  when: ansible_distribution == "Ubuntu"
+  become: true

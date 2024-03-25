@@ -1,0 +1,7 @@
+[ubuntu_servers]
+192.168.56.113 #Server1
+192.168.56.115 #Server2
+192.168.56.114 #ManagedNode
+
+[centos_servers]
+192.168.56.116 #CentOS
