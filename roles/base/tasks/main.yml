@@ -1,8 +1,8 @@
 ---
 - name: update repository index (CentOS)
-  dnf:
-    name: '*'
-    state: latest
+  yum:
+    update_cache: yes
+  changed_when: false
   when: ansible_distribution == "CentOS"
   become: true
 
